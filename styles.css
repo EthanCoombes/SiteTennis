@@ -267,6 +267,7 @@ li { margin-bottom: 0.35rem; }
   align-items: center;
   gap: 0.75rem;
   margin-top: 1rem;
+  touch-action: pan-y;
 }
 .carousel-track {
   position: relative;

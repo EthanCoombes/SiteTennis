@@ -13,6 +13,8 @@ function showMember(index) {
   });
 }
 
+let autoRotateId = null;
+
 function nextMember() {
   currentIndex = (currentIndex + 1) % members.length;
   showMember(currentIndex);
@@ -23,16 +25,67 @@ function prevMember() {
   showMember(currentIndex);
 }
 
-if (members.length) {
-  showMember(0);
-  setInterval(nextMember, 10000);
+function startAutoRotate() {
+  autoRotateId = setInterval(nextMember, 20000);
 }
 
-prevBtn?.addEventListener('click', prevMember);
-nextBtn?.addEventListener('click', nextMember);
+function resetAutoRotate() {
+  if (autoRotateId !== null) {
+    clearInterval(autoRotateId);
+  }
+  startAutoRotate();
+}
+
+const carouselTrack = document.querySelector('.carousel-track');
+let touchStartX = null;
+let touchStartY = null;
+const swipeThreshold = 50;
+
+if (members.length) {
+  showMember(0);
+  startAutoRotate();
+}
+
+function handleTouchStart(event) {
+  if (!event.touches || event.touches.length !== 1) return;
+  touchStartX = event.touches[0].clientX;
+  touchStartY = event.touches[0].clientY;
+}
+
+function handleTouchEnd(event) {
+  if (touchStartX === null || !event.changedTouches || event.changedTouches.length !== 1) return;
+  const touchEndX = event.changedTouches[0].clientX;
+  const touchEndY = event.changedTouches[0].clientY;
+  const diffX = touchEndX - touchStartX;
+  const diffY = touchEndY - touchStartY;
+  touchStartX = null;
+  touchStartY = null;
+
+  if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+    if (diffX < 0) {
+      nextMember();
+    } else {
+      prevMember();
+    }
+    resetAutoRotate();
+  }
+}
+
+prevBtn?.addEventListener('click', () => {
+  prevMember();
+  resetAutoRotate();
+});
+nextBtn?.addEventListener('click', () => {
+  nextMember();
+  resetAutoRotate();
+});
 dots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
     currentIndex = index;
     showMember(currentIndex);
+    resetAutoRotate();
   });
 });
+
+carouselTrack?.addEventListener('touchstart', handleTouchStart, { passive: true });
+carouselTrack?.addEventListener('touchend', handleTouchEnd);
