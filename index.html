@@ -1,11 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Périers Sports Tennis</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+  <header class="hero-header">
+    <nav class="top-nav">
+      <a class="brand" href="#">PERIERS SPORTS TENNIS</a>
+      <div class="nav-links">
+        <a href="#presentation">Présentation</a>
+        <a href="#bureau">Bureau</a>
+        <a href="#activites">Cours & tarifs</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Club familial • Tennis à Périers</p>
+        <h1>Bienvenue à Périers Sports Tennis</h1>
+        <p>Un club chaleureux, ouvert aux licenciés, aux familles et aux nouveaux venus. Nous partageons la passion du tennis sur 3 terrains : 1 salle et 2 extérieurs.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#activites">Voir les cours et tarifs</a>
+          <a class="btn btn-secondary" href="#contact">Nous contacter</a>
+        </div>
+        <div class="quick-facts">
+          <span>3 terrains</span>
+          <span>Adultes & enfants</span>
+          <span>Location de terrain</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img class="logo-image" src="Images/logo.jpg" alt="Logo Périers Sports Tennis">
+        <h2>Informations pratiques</h2>
+        <p>Stade municipal<br>Route de St Lo<br>50190 Périers</p>
+        <p>1 terrain en salle<br>2 terrains extérieurs</p>
+        <a class="text-link" href="#contact">Voir les coordonnées</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section id="presentation">
+        <div class="section-heading">
+          <h2>Présentation du club</h2>
+          <p>Un club de tennis convivial, pensé pour informer les licenciés et accueillir de nouveaux joueurs.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="pill">Famille</span>
+            <h3>Une ambiance conviviale</h3>
+            <p>Le club met avant tout l’accent sur le plaisir de jouer, l’échange et la qualité de vie au sein du club.</p>
+          </article>
+          <article class="card">
+            <span class="pill">Tous niveaux</span>
+            <h3>Des activités pour tous</h3>
+            <p>Adultes et enfants peuvent progresser à leur rythme, que ce soit pour le plaisir, la pratique régulière ou la compétition.</p>
+          </article>
+          <article class="card">
+            <span class="pill">Accès simple</span>
+            <h3>Des installations adaptées</h3>
+            <p>Les adhérents peuvent profiter des terrains quand ils sont disponibles, avec un cadre pratique et accessible.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="bureau">
+        <div class="section-heading">
+          <h2>Le bureau</h2>
+          <p>Une petite présentation du bureau du club, à compléter avec les noms et fonctions exacts si vous le souhaitez.</p>
+        </div>
+
+        <div class="carousel">
+          <button class="carousel-btn prev" type="button" aria-label="Précédent">‹</button>
+          <div class="carousel-track">
+            <article class="member active">
+              <img src="Images/Didier.png" alt="Photo du président Didier Leclere">
+              <div class="member-info">
+                <p class="member-role">Président</p>
+                <h3>Didier Leclere</h3>
+                <p>Garant de la vision, des projets et de l’animation de la vie associative.</p>
+              </div>
+            </article>
+            <article class="member">
+              <img src="Images/Corinne.png" alt="Photo de la trésorière Corinne Lechenadec">
+              <div class="member-info">
+                <p class="member-role">Trésorière</p>
+                <h3>Corinne Lechenadec</h3>
+                <p>Responsable du suivi financier, des adhésions et des comptes du club.</p>
+              </div>
+            </article>
+            <article class="member">
+              <img src="Images/Yoyo.png" alt="Photo de la secrétaire Yoyo Leroux">
+              <div class="member-info">
+                <p class="member-role">Secrétaire</p>
+                <h3>Yohann Leroux</h3>
+                <p>En charge de la communication, de l’organisation des réunions et du suivi administratif.</p>
+              </div>
+            </article>
+            <article class="member">
+              <img src="Images/Philippe.png" alt="Photo du membre du bureau Philippe Lechenadec">
+              <div class="member-info">
+                <p class="member-role">Membre du bureau</p>
+                <h3>Philippe Lechenadec</h3>
+                <p>Impliqué dans l’organisation des activités et des événements. Son classique : « failli gagner », toujours avec le sourire.</p>
+              </div>
+            </article>
+          </div>
+          <button class="carousel-btn next" type="button" aria-label="Suivant">›</button>
+        </div>
+        <div class="carousel-dots" aria-label="Navigation du bureau">
+          <button type="button" aria-label="Afficher le président"></button>
+          <button type="button" aria-label="Afficher le vice-président"></button>
+          <button type="button" aria-label="Afficher le trésorier"></button>
+          <button type="button" aria-label="Afficher le secrétaire"></button>
+        </div>
+      </section>
+
+      <section id="activites">
+        <div class="section-heading">
+          <h2>Cours, adhésion et tarifs</h2>
+          <p>Des formules simples pour les adhérents, les joueurs en équipe et les familles.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <span class="pill">Cours</span>
+            <h3>Horaires des cours</h3>
+            <ul>
+              <li>Lundi soir : de 17h à 22h</li>
+              <li>Mercredi après-midi : de 13h30 à 14h30</li>
+              <li>Samedi : de 9h à 14h</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="pill">Adhésion</span>
+            <h3>Tarifs adhésion</h3>
+            <div class="price-list">
+              <div class="price-item"><span>Adhésion / licence</span><strong>80 €</strong></div>
+              <div class="price-item"><span>Cours adultes (joueur équipe)</span><strong>110 €</strong></div>
+              <div class="price-item"><span>Cours adultes (hors équipe)</span><strong>130 €</strong></div>
+              <div class="price-item"><span>Cours enfants</span><strong>90 €</strong></div>
+              <div class="price-item"><span>Location d’un terrain</span><strong>6 € / heure</strong></div>
+            </div>
+          </article>
+          <article class="card">
+            <span class="pill">Équipes</span>
+            <h3>Championnat par équipe</h3>
+            <p>Au printemps, deux équipes représentent le club : l’équipe 1 en pré-régional et l’équipe 2 en D3.</p>
+          </article>
+          <article class="card">
+            <span class="pill">Tournoi interne</span>
+            <h3>Finale et repas</h3>
+            <p>Chaque année, nous organisons un tournoi interne suivi d’un repas convivial pour tous les membres.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="installations">
+        <div class="section-heading">
+          <h2>Installations et photos</h2>
+          <p>Quelques visuels pour donner vie au club et mettre en avant ses terrains, nos membres et nos événements.</p>
+        </div>
+        <div class="gallery">
+          <article class="photo-card">
+            <img class="photo-final" src="Images/Final.png" alt="Photo de la finale du tournoi interne">
+            <div class="photo-content">
+              <h3>Finale du tournoi interne</h3>
+              <p>La photo prise après la finale du tournoi interne, moment fort de l’année au club.</p>
+            </div>
+          </article>
+          <article class="photo-card">
+            <img class="photo-repas" src="Images/Repas.png" alt="Photo du repas après la finale">
+            <div class="photo-content">
+              <h3>Repas du club</h3>
+              <p>Un moment convivial partagé par tous les participants après la finale du tournoi interne.</p>
+            </div>
+          </article>
+          <article class="photo-card">
+            <img src="Images/PA.jpg" alt="Photo de PA, joueur du club">
+            <div class="photo-content">
+              <h3>PA, joueur du club</h3>
+              <p>Un joueur actif du club, symbole de notre esprit d’équipe et de compétition.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>Pour toute question, inscription ou renseignement, vous pouvez nous contacter ici.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h3>Coordonnées</h3>
+            <p><strong>Club :</strong> Périers Sports Tennis</p>
+            <p><strong>Adresse :</strong> Stade municipal, Route de St Lo, 50190 Périers</p>
+            <p><strong>Téléphone :</strong> À renseigner</p>
+            <p><strong>Email :</strong> À renseigner</p>
+            <p><strong>Instagram :</strong> <a href="https://www.instagram.com/perierssportstennis/?__pwa=1#" target="_blank" rel="noreferrer noopener">@perierssportstennis</a></p>
+          </div>
+          <div class="contact-box">
+            <h3>À retenir</h3>
+            <ul>
+              <li>Les cours sont ouverts aux adultes et aux enfants</li>
+              <li>L’adhésion est nécessaire pour suivre des cours</li>
+              <li>La location d’un terrain est possible à 6 € / heure</li>
+              <li>Le club reste orienté famille, convivialité et accueil</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Périers Sports Tennis — Site en construction</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
