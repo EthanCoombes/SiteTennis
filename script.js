@@ -36,7 +36,7 @@ function resetAutoRotate() {
   startAutoRotate();
 }
 
-const carouselTrack = document.querySelector('.carousel-track');
+const carousel = document.querySelector('.carousel');
 let touchStartX = null;
 let touchStartY = null;
 const swipeThreshold = 50;
@@ -46,16 +46,28 @@ if (members.length) {
   startAutoRotate();
 }
 
+function getTouchPoint(event) {
+  if (event.changedTouches && event.changedTouches.length === 1) {
+    return event.changedTouches[0];
+  }
+  if ('clientX' in event && 'clientY' in event) {
+    return event;
+  }
+  return null;
+}
+
 function handleTouchStart(event) {
-  if (!event.touches || event.touches.length !== 1) return;
-  touchStartX = event.touches[0].clientX;
-  touchStartY = event.touches[0].clientY;
+  const point = getTouchPoint(event);
+  if (!point) return;
+  touchStartX = point.clientX;
+  touchStartY = point.clientY;
 }
 
 function handleTouchEnd(event) {
-  if (touchStartX === null || !event.changedTouches || event.changedTouches.length !== 1) return;
-  const touchEndX = event.changedTouches[0].clientX;
-  const touchEndY = event.changedTouches[0].clientY;
+  const point = getTouchPoint(event);
+  if (touchStartX === null || !point) return;
+  const touchEndX = point.clientX;
+  const touchEndY = point.clientY;
   const diffX = touchEndX - touchStartX;
   const diffY = touchEndY - touchStartY;
   touchStartX = null;
@@ -87,5 +99,7 @@ dots.forEach((dot, index) => {
   });
 });
 
-carouselTrack?.addEventListener('touchstart', handleTouchStart, { passive: true });
-carouselTrack?.addEventListener('touchend', handleTouchEnd);
+carousel?.addEventListener('touchstart', handleTouchStart, { passive: true });
+carousel?.addEventListener('touchend', handleTouchEnd);
+carousel?.addEventListener('pointerdown', handleTouchStart);
+carousel?.addEventListener('pointerup', handleTouchEnd);
